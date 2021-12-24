@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <button @click="search">请求</button>
   </div>
 </template>
 
@@ -7,15 +8,17 @@
 import { getUserInfo } from "./request/index";
 export default {
   name: 'App',
-  mounted() {
-    getUserInfo({
-      user:'zhufenli'
-    }).then(res=>{
-      console.log(res);
-    }).catch(error=>{
-      console.log(error);
+  methods: {
+    search() {
+      getUserInfo({
+        user:'zhufenli'
+      }).then(res=>{
+        console.log(res);
+      }).catch(error=>{
+        console.log(error);
 
-    })
+      })
+    }
   }
 }
 </script>
